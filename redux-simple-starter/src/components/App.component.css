@@ -1,9 +1,9 @@
 .app-component{
-	background: lightgray;
+	background: white;
 	height: auto;
 	width: 100vw;
 }
-h1{
-	background: yellow;
-	border: 1px solid black;
+.video, .video-list {
+	height: 90vh;
+	overflow: auto;
 }

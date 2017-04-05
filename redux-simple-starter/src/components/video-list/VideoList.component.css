@@ -1,0 +1,10 @@
+.media-object{
+	width: 100px;
+	height: 100px;
+}
+.media-author{
+	color: gray;
+}
+ul{
+	padding-left: 0px;
+}

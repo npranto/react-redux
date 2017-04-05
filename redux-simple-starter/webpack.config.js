@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractCSS = require('extract-text-webpack-plugin');
 
 const VENDOR_LIBS = [
-    'react', 'react-dom', 'youtube-api-search'
+    'react', 'react-dom', 'youtube-api-search', 'moment'
 ]
 
 const config = {
