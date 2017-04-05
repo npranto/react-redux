@@ -1,1 +1,9 @@
-App.component.css
+.app-component{
+	background: lightgray;
+	height: auto;
+	width: 100vw;
+}
+h1{
+	background: yellow;
+	border: 1px solid black;
+}
