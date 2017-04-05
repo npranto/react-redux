@@ -6,14 +6,24 @@ import YoutubeSearch from 'youtube-api-search';
 import {youtubeApiConfig} from './../../config/youtube-api.config';
 import './App.component.css';
 
-YoutubeSearch({key: youtubeApiConfig.api, term: 'tum hi ho'}, (response) => {
-	console.log(response);
-})
 
 class App extends Component {
 
-	constructor(){
-		super();
+	constructor(props){
+		super(props);
+		this.state = {
+			fetchedVideos: []
+		}
+		this.fetchVideosFromNewTerm('tum hi ho');
+ 	}
+
+ 	fetchVideosFromNewTerm(newTerm){
+		YoutubeSearch({key: youtubeApiConfig.api, term: newTerm}, (videos) => {
+			this.setState({
+				fetchedVideos: videos
+			})
+			console.log(this.state.fetchedVideos);
+		})
  	}
 
 	render(){
@@ -31,7 +41,7 @@ class App extends Component {
 						<Video />
 					</div>
 					<div className="video-list col-xs-12 col-sm-12 col-md-4 col-lg-4">
-						<VideoList />
+						<VideoList videos={this.state.fetchedVideos}/>
 					</div>
 				</div>
 
