@@ -3,7 +3,7 @@
 	height: auto;
 	width: 100vw;
 }
-.video, .video-list {
+.video-list {
 	height: 90vh;
 	overflow: auto;
 }

@@ -5,3 +5,7 @@
 .media-by, .media-desc{
 	color: gray;
 }
+img{
+	width: 100%;
+	height: 100%;
+}

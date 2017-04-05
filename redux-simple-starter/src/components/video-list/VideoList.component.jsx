@@ -2,26 +2,21 @@ import React, {Component} from 'react';
 import VideoListItem from './../video-list-item/VideoListItem.component.jsx';
 import './VideoList.component.css';
 
-class VideoList extends Component{
-	constructor(props){
-		super(props);
-		console.log(this.props.videos)
-	}
+const VideoList = (props) => { 
 
-	render(){ 
-
-
+	const videoList = props.videos.map((video)=>{
 		return (
-
-			<ul className="media-list">
-				{this.props.videos.length}
-
-				<VideoListItem />
-
-			</ul>
-
+			<VideoListItem key={video.etag} video={video} />
 		)
-	}
+	})
+	
+	return (
+
+		<ul className="media-list">
+			{videoList}
+		</ul>
+
+	)
 }
 
 export default VideoList
