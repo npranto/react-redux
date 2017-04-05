@@ -14,7 +14,7 @@ class App extends Component {
 		this.state = {
 			fetchedVideos: []
 		}
-		this.fetchVideosFromNewTerm('tum hi ho');
+		this.fetchVideosFromNewTerm('nba highlights');
  	}
 
  	fetchVideosFromNewTerm(newTerm){
@@ -38,7 +38,7 @@ class App extends Component {
 
 				<div className="row">
 					<div className="video col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<Video />
+						<Video currentVideo={this.state.fetchedVideos[0]}/>
 					</div>
 					<div className="video-list col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						<VideoList videos={this.state.fetchedVideos}/>

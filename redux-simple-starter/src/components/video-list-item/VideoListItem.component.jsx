@@ -1,52 +1,28 @@
 import React, {Component} from 'react';
 import './VideoListItem.component.css';
+import _ from 'lodash';
 
 class VideoListItem extends Component{
-	constructor(){
-		super();
+	constructor(props){
+		super(props);
 	}
 
 	render(){
 		return (
 
-			<div>
-
-				<div className="media">
-				  <div className="media-left">
-				    <a href="#">
-				      <img className="media-object" src="https://lh6.ggpht.com/UHb51xJJRdDjAmGLSXwF-2HRnOQ-YSx5ogF6QjMOB7Cr0x_PRLy6YUYyOeuGEgADKRHe=w300" alt="..." />
-				    </a>
-				  </div>
-				  <div className="media-body">
-				    <h4 className="media-heading"> Orlando Magic vs Cleveland Cavaliers - Full Game Highlights | April 4, 2017 | 2016-17 NBA Season </h4>
-				    <p className="media-author"> Ximo Pierto Official </p>
-				  </div>
-				</div>
-				<div className="media">
-				  <div className="media-left">
-				    <a href="#">
-				      <img className="media-object" src="https://lh6.ggpht.com/UHb51xJJRdDjAmGLSXwF-2HRnOQ-YSx5ogF6QjMOB7Cr0x_PRLy6YUYyOeuGEgADKRHe=w300" alt="..." />
-				    </a>
-				  </div>
-				  <div className="media-body">
-				    <h4 className="media-heading"> Orlando Magic vs Cleveland Cavaliers - Full Game Highlights | April 4, 2017 | 2016-17 NBA Season </h4>
-				    <p className="media-author"> Ximo Pierto Official </p>
-				  </div>
-				</div>
-				<div className="media">
-				  <div className="media-left">
-				    <a href="#">
-				      <img className="media-object" src="https://lh6.ggpht.com/UHb51xJJRdDjAmGLSXwF-2HRnOQ-YSx5ogF6QjMOB7Cr0x_PRLy6YUYyOeuGEgADKRHe=w300" alt="..." />
-				    </a>
-				  </div>
-				  <div className="media-body">
-				    <h4 className="media-heading"> Orlando Magic vs Cleveland Cavaliers - Full Game Highlights | April 4, 2017 | 2016-17 NBA Season </h4>
-				    <p className="media-author"> Ximo Pierto Official </p>
-				  </div>
-				</div>
-
+			<div className="media">
+			  <div className="media-left">
+			    <a>
+			      <img className="media-object" 
+			      	src={this.props.video.snippet.thumbnails.default.url} alt="..." />
+			    </a>
+			  </div>
+			  <div className="media-body">
+			    <h4 className="media-heading"> {_.truncate(this.props.video.snippet.title, {'length': 60,'separator': '...'})} </h4>
+			    <p className="media-author"> {_.truncate(this.props.video.snippet.channelTitle, {'length': 15,'separator': '...'})} </p>
+			  </div>
 			</div>
-			
+					
 		)
 	}
 }
