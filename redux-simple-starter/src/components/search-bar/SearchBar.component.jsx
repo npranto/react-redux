@@ -22,11 +22,27 @@ class SearchBar extends Component{
 	render(){
 		return (
 			<div className="search-bar-component">
-				<input 
-					type="text"
-					value={this.state.searchTerm} 
-					placeholder="Search" 
-					onChange={this.onSearchBarInputChange.bind(this)} />	
+				<nav className="navbar navbar-default">
+				  <div className="container-fluid">
+				    <div className="navbar-header">
+				      <a className="navbar-brand" href="#"> VideoTube </a>
+				    </div>
+
+				    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <form className="navbar-form navbar-right" role="search">
+				        <div className="form-group">
+				        	<input 
+								type="text"
+								className="form-control"
+								value={this.state.searchTerm} 
+								placeholder="Search" 
+								onChange={this.onSearchBarInputChange.bind(this)} />
+				        </div>
+				        <button type="submit" className="btn btn-success"> Search </button>
+				      </form>
+				    </div>
+				  </div>
+				</nav>	
 			</div>
 		)
 	}
