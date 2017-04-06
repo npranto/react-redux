@@ -21,8 +21,8 @@ class SearchBar extends Component{
 	}
 
 	fetchVideos(event){
-		this.onSearchBarInputChange(event);
 		this.props.fetchVideos(this.state.searchTerm);
+		event.preventDefault();
 	}
 
 	render(){
@@ -31,20 +31,20 @@ class SearchBar extends Component{
 				<nav className="navbar navbar-default">
 				  <div className="container-fluid">
 				    <div className="navbar-header">
-				      <a className="navbar-brand"> VideoTube </a>
+				      <a className="navbar-brand"> Video<sup>5</sup> </a>
 				    </div>
 
 				    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				      <form className="navbar-form navbar-right" role="search">
+				      <form className="navbar-form navbar-right" role="search" onSubmit={(event)=>{this.fetchVideos(event)}}>
 				        <div className="form-group">
 				        	<input 
 								type="text"
 								className="form-control"
 								value={this.state.searchTerm} 
 								placeholder="Search" 
-								onChange={(event)=>{this.fetchVideos(event)}}/>
+								onChange={(event)=>{this.onSearchBarInputChange(event)}}/>
 				        </div>
-				        <button type="submit" className="btn btn-success"> Search </button>
+				        <input type="submit" className="btn btn-success" value="Search" />
 				      </form>
 				    </div>
 				  </div>

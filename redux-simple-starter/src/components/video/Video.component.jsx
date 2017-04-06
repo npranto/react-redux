@@ -24,7 +24,7 @@ const Video = (props) => {
 			  <iframe 
 			  	className="embed-responsive-item" 
 			  	width="100%" 
-			  	src={`https://www.youtube.com/embed/${props.currentVideo.id.videoId}`} 
+			  	src={`https://www.youtube.com/embed/${props.currentVideo.id.videoId}?autoplay=1`} 
 			  	frameBorder="0" 
 			  	allowFullScreen>
 			  </iframe>

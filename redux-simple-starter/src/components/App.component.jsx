@@ -15,14 +15,23 @@ class App extends Component {
 			fetchedVideos: [],
 			currentVideo: null
 		}
-		this.fetchVideos('amaro porane jaha chai');
+		this.getATrendingVideo();
+ 	}
+
+ 	getATrendingVideo(){
+ 		YoutubeSearch({key: youtubeApiConfig.key, term: 'jimmy fallon'}, (videos) => {
+			this.setState({
+				fetchedVideos: videos,
+				currentVideo: videos[0]
+			})
+		})
  	}
 
  	fetchVideos(newTerm){
 		YoutubeSearch({key: youtubeApiConfig.key, term: newTerm}, (videos) => {
 			this.setState({
 				fetchedVideos: videos,
-				currentVideo: videos[0]
+				currentVideo: this.state.currentVideo
 			})
 			console.log(this.state.fetchedVideos);
 		})
