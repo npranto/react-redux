@@ -1,1 +1,5 @@
-SearchBar.component.css
+.navbar-brand{
+	font-family: 'Pacifico', cursive;
+	font-size: 2em;
+	color: deeppink !important;
+}

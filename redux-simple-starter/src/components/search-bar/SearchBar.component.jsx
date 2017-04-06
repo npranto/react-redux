@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './SearchBar.component.css';
 
 class SearchBar extends Component{
 	
@@ -19,13 +20,18 @@ class SearchBar extends Component{
 		console.log(this.state.searchTerm);
 	}
 
+	fetchVideos(event){
+		this.setState({searchTerm: event.target.value});
+		this.props.fetchVideos(this.state.searchTerm);
+	}
+
 	render(){
 		return (
 			<div className="search-bar-component">
 				<nav className="navbar navbar-default">
 				  <div className="container-fluid">
 				    <div className="navbar-header">
-				      <a className="navbar-brand" href="#"> VideoTube </a>
+				      <a className="navbar-brand"> VideoTube </a>
 				    </div>
 
 				    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -36,7 +42,7 @@ class SearchBar extends Component{
 								className="form-control"
 								value={this.state.searchTerm} 
 								placeholder="Search" 
-								onChange={this.onSearchBarInputChange.bind(this)} />
+								onChange={(event)=>{this.fetchVideos(event)}}/>
 				        </div>
 				        <button type="submit" className="btn btn-success"> Search </button>
 				      </form>
