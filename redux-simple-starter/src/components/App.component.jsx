@@ -15,10 +15,10 @@ class App extends Component {
 			fetchedVideos: [],
 			currentVideo: null
 		}
-		this.fetchVideosFromNewTerm('amaro porane jaha chai');
+		this.fetchVideos('amaro porane jaha chai');
  	}
 
- 	fetchVideosFromNewTerm(newTerm){
+ 	fetchVideos(newTerm){
 		YoutubeSearch({key: youtubeApiConfig.api, term: newTerm}, (videos) => {
 			this.setState({
 				fetchedVideos: videos,
@@ -34,7 +34,7 @@ class App extends Component {
 				
 				<div className="row">
 					<div className="search-bar col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<SearchBar />
+						<SearchBar fetchVideos={(searchTerm)=>{this.fetchVideos(searchTerm)} }/>
 					</div>
 				</div>
 
