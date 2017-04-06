@@ -19,7 +19,7 @@ class App extends Component {
  	}
 
  	fetchVideos(newTerm){
-		YoutubeSearch({key: youtubeApiConfig.api, term: newTerm}, (videos) => {
+		YoutubeSearch({key: youtubeApiConfig.key, term: newTerm}, (videos) => {
 			this.setState({
 				fetchedVideos: videos,
 				currentVideo: videos[0]

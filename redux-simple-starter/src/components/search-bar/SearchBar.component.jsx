@@ -21,7 +21,7 @@ class SearchBar extends Component{
 	}
 
 	fetchVideos(event){
-		this.setState({searchTerm: event.target.value});
+		this.onSearchBarInputChange(event);
 		this.props.fetchVideos(this.state.searchTerm);
 	}
 

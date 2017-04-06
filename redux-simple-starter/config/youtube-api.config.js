@@ -1,3 +1,3 @@
 export const youtubeApiConfig = {
-	api: 'AIzaSyDdamOfQUwsgvbTVNRqxgXswT3EXCBxbMM'
+	key: 'AIzaSyDdamOfQUwsgvbTVNRqxgXswT3EXCBxbMM'
 }
