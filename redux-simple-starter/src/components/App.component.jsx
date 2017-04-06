@@ -12,15 +12,17 @@ class App extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			fetchedVideos: []
+			fetchedVideos: [],
+			currentVideo: null
 		}
-		this.fetchVideosFromNewTerm('nba highlights');
+		this.fetchVideosFromNewTerm('amaro porane jaha chai');
  	}
 
  	fetchVideosFromNewTerm(newTerm){
 		YoutubeSearch({key: youtubeApiConfig.api, term: newTerm}, (videos) => {
 			this.setState({
-				fetchedVideos: videos
+				fetchedVideos: videos,
+				currentVideo: videos[0]
 			})
 			console.log(this.state.fetchedVideos);
 		})
@@ -38,10 +40,17 @@ class App extends Component {
 
 				<div className="row">
 					<div className="video col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<Video currentVideo={this.state.fetchedVideos[0]}/>
+						<Video 
+							currentVideo={this.state.currentVideo}
+						/>
 					</div>
 					<div className="video-list col-xs-12 col-sm-12 col-md-4 col-lg-4">
-						<VideoList videos={this.state.fetchedVideos}/>
+						<VideoList 
+							videos={this.state.fetchedVideos} 
+							changeCurrentVideo={ (currentVideo)=>{
+								this.setState({currentVideo: currentVideo})
+							}} 
+						/>
 					</div>
 				</div>
 

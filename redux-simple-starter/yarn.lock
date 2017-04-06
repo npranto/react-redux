@@ -2130,6 +2130,10 @@ hosted-git-info@^2.1.4:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.4.1.tgz#4b0445e41c004a8bd1337773a4ff790ca40318c8"
 
+hover.css@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/hover.css/-/hover.css-2.2.0.tgz#3a457c4f6bf756dcebae0317f09a8088c7626a77"
+
 hpack.js@^2.1.6:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/hpack.js/-/hpack.js-2.1.6.tgz#87774c0949e513f42e84575b3c45681fade2a0b2"

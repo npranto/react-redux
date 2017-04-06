@@ -10,7 +10,7 @@ class VideoListItem extends Component{
 	render(){
 		return (
 
-			<div className="media">
+			<div className="media hvr-sweep-to-left" onClick={() => {this.props.changeCurrentVideo(this.props.video)}}>
 			  <div className="media-left">
 			    <a>
 			      <img className="media-object" 
