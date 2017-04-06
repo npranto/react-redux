@@ -6,3 +6,11 @@
 	width: 125px;
 	height: 95px;
 }
+.media{
+	cursor: pointer;
+	transition: 0.5s;
+	padding: 0.5em;
+}
+.media:hover{
+	background: lightgray;
+}
