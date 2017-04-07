@@ -4,3 +4,8 @@
 	font-size: 2.5em;
 	color: deeppink !important;
 }
+.search-input:hover{
+	width: 50vw;
+	background-color: deep;
+	color: white;
+}

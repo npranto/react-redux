@@ -8,7 +8,8 @@ class SearchBar extends Component{
 
 		// NOTE: to manipulate state outside of constructor, use this.setState()...
 		this.state = {
-			searchTerm: ''
+			searchTerm: '',
+			extendInput: ''
 		}
 	}
 
@@ -31,7 +32,7 @@ class SearchBar extends Component{
 				<nav className="navbar navbar-default">
 				  <div className="container-fluid">
 				    <div className="navbar-header">
-				      <a className="navbar-brand"> Video<sup>5</sup> </a>
+				      <a className="navbar-brand" href="/"> Video<sup>5</sup> </a>
 				    </div>
 
 				    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -39,7 +40,7 @@ class SearchBar extends Component{
 				        <div className="form-group">
 				        	<input 
 								type="text"
-								className="form-control"
+								className="form-control hvr-fade search-input"
 								value={this.state.searchTerm} 
 								placeholder="Search" 
 								onChange={(event)=>{this.onSearchBarInputChange(event)}}/>
