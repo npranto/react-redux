@@ -9,8 +9,12 @@ class SearchBar extends Component {
 		this.state = {
 			searchTerm: ''
 		}
+		this.updateSearchTerm = this.updateSearchTerm.bind(this);
+		this.search = this.search.bind(this);
+		this.clearSearchField = this.clearSearchField.bind(this);
 	}
 
+	// updates state with input changes
 	updateSearchTerm(event) {
 		this.setState({
 			searchTerm: event.target.value
@@ -18,12 +22,14 @@ class SearchBar extends Component {
 		console.log(event.target.value);
 	}
 
+	// searches term based of 'searchTerm' prop in state
 	search(event) {
 		console.log(this.state.searchTerm);
 		event.preventDefault();
 	}
 
-	clearSearchField() {
+	// clears input field when 'x' is clicked
+	clearSearchField(event) {
 		this.setState({
 			searchTerm: ''
 		})
@@ -34,23 +40,17 @@ class SearchBar extends Component {
 		return (
 			<nav>
 		    <div className="nav-wrapper">
-		      <form onSubmit={(event)=>{this.search(event)}}>
+		      <form onSubmit={this.search}>
 		        <div className="input-field">
 		          <input 
 		          	id="search" 
 		          	type="search"
 		          	value={this.state.searchTerm}
-		          	placeholder="Sarch"
-		          	onChange={(event)=>{
-		          		this.updateSearchTerm(event)
-		          	}} 
+		          	placeholder="Search for city, i.e., Boston"
+		          	onChange={this.updateSearchTerm} 
 		          	required />
 		          <label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
-		          <i 
-		          	className="material-icons" 
-		          	onClick={()=>{
-		          		this.clearSearchField()
-		          	}}>close</i>
+		          <i className="material-icons" onClick={this.clearSearchField}>close</i>
 		        </div>
 		      </form>
 		    </div>
