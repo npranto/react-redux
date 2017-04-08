@@ -1,4 +1,8 @@
 import React, {Component} from 'react';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+
+import {fetchWeatherAction} from './../../actions/index.js';
 
 import './SearchBar.component.css';
 
@@ -7,47 +11,48 @@ class SearchBar extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			searchTerm: ''
+			city: ''
 		}
-		this.updateSearchTerm = this.updateSearchTerm.bind(this);
-		this.search = this.search.bind(this);
+		this.updateInputChanges = this.updateInputChanges.bind(this);
+		this.fetchWeatherByCity = this.fetchWeatherByCity.bind(this);
 		this.clearSearchField = this.clearSearchField.bind(this);
 	}
 
 	// updates state with input changes
-	updateSearchTerm(event) {
+	updateInputChanges(event) {
 		this.setState({
-			searchTerm: event.target.value
+			city: event.target.value
 		})
 		console.log(event.target.value);
 	}
 
 	// searches term based of 'searchTerm' prop in state
-	search(event) {
-		console.log(this.state.searchTerm);
+	fetchWeatherByCity(event) {
 		event.preventDefault();
+		this.props.fetchWeather(this.state.city);
+		console.log('SUBMITTED: ', this.state.city);
+		this.clearSearchField();
 	}
 
 	// clears input field when 'x' is clicked
 	clearSearchField(event) {
 		this.setState({
-			searchTerm: ''
+			city: ''
 		})
-		console.log(this.state.searchTerm);
 	}
 
 	render() {
 		return (
 			<nav>
 		    <div className="nav-wrapper">
-		      <form onSubmit={this.search}>
+		      <form onSubmit={this.fetchWeatherByCity}>
 		        <div className="input-field">
 		          <input 
 		          	id="search" 
 		          	type="search"
-		          	value={this.state.searchTerm}
+		          	value={this.state.city}
 		          	placeholder="Search for city, i.e., Boston"
-		          	onChange={this.updateSearchTerm} 
+		          	onChange={this.updateInputChanges} 
 		          	required />
 		          <label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
 		          <i className="material-icons" onClick={this.clearSearchField}>close</i>
@@ -60,4 +65,16 @@ class SearchBar extends Component {
 
 }
 
-export default SearchBar;
+const mapDispatchToProps = (dispatch) => {
+	return bindActionCreators({
+		fetchWeather: fetchWeatherAction
+	}, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(SearchBar);
+
+
+
+
+
+
