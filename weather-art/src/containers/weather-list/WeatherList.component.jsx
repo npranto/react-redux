@@ -4,6 +4,7 @@ import _ from 'lodash';
 
 import './WeatherList.component.css';
 import Chart from './../../components/chart/Chart.component.jsx';
+import CityGoogleMap from './../../components/city-google-map/CityGoogleMap.component.jsx';
 
 class WeatherList extends Component {
 	
@@ -15,21 +16,26 @@ class WeatherList extends Component {
 
 	renderWeather(cityWeather) {
 		const name = cityWeather.city.name;
+		const latitude = cityWeather.city.coord.lat;
+		const longitude = cityWeather.city.coord.lon;
 		const temperatureList = this.kelvinToFahrenheit(this.getFiveDayTemperatures(cityWeather.list));
 		const pressureList = this.getFiveDayPressures(cityWeather.list);
 		const humidityList = this.getFiveDayHumidities(cityWeather.list)
 
 		return (
-			<tr key={name}>
-	          <td> {name} </td>
-	          <td>
-				<Chart data={temperatureList} stroke="green" fill="green" />
+			<tr key={name} className="z-depth-4">
+	          <td> 
+	        	<CityGoogleMap className="city-map" lat={latitude} lon={longitude} />
+	        	<h5> {name} </h5>
 	          </td>
 	          <td>
-	          	<Chart data={pressureList} stroke="red" fill="red" />
+				<Chart data={temperatureList} units="temperature" stroke="green" fill="green" />
 	          </td>
 	          <td>
-	          	<Chart data={humidityList} stroke="gray" fill="gray" />
+	          	<Chart data={pressureList} units="pressure" stroke="gray" fill="gray" />
+	          </td>
+	          <td>
+	          	<Chart data={humidityList} units="humidity" stroke="red" fill="red" />
 	          </td>
 	        </tr>
 		)
@@ -62,9 +68,9 @@ class WeatherList extends Component {
 			      <thead>
 			        <tr>
 			          <th>City</th>
-			          <th>Temperature (<span>&#8457;</span>) </th>
-			          <th>Pressure</th>
-			          <th>Humidity</th>
+			          <th>Temperature <sup>(<span>&#8457;</span>)</sup></th>
+			          <th>Pressure <sup>(hPa)</sup></th>
+			          <th>Humidity <sup>(<span>&#37;</span>)</sup></th>
 			        </tr>
 			      </thead>
 			    </table>
@@ -90,7 +96,5 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(WeatherList);
-
-
 
 
