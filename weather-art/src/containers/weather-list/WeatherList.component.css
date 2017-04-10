@@ -1,12 +1,7 @@
+/*
+  citation: https://codepen.io/nikhil8krishnan/pen/WvYPvv
+*/
 
-h1{
-  font-size: 30px;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: 300;
-  text-align: center;
-  margin-bottom: 15px;
-}
 table{
   width:100%;
   table-layout: fixed;
@@ -21,14 +16,26 @@ table{
   margin-top: 0px;
   /*border: 1px solid rgba(255,255,255,0.3);*/
 }
+th, td{
+  text-align: center;
+}
+td {
+  font-size: 1.10em;
+  color: white;
+}
+th{
+  font-size: 1.25em;
+}
 
 /* demo styles */
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 body{
-  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
-  background: linear-gradient(to right, #25c481, #25b7c4);
-  font-family: 'Roboto', sans-serif;
+
+  background: #e53935;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #e35d5b, #e53935);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #e35d5b, #e53935); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 section{
   margin: 50px;
