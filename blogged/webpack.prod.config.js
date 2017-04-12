@@ -13,7 +13,7 @@ const VENDOR_LIBS = [
     'react',
     'react-dom',
     'react-redux',
-    'react-router',
+    'react-router-dom',
     'redux',
     'redux-promise'
 ]
@@ -55,7 +55,7 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'index.html'
+            template: './src/index.html'
         }),
         new webpack.optimize.CommonsChunkPlugin({
             names: ['vendor', 'manifest'],
