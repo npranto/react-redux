@@ -1,11 +1,12 @@
 import React from 'react';
-import {Route, IndexRoute} from 'react-router';
+import {Route} from 'react-router-dom';
 import App from './../components/App.component.jsx';
 
+
 const routes = (
-	<Route path="/" component={App}>
-		
-	</Route>
+	<div className="routes">
+		<Route path="/" component={App} />
+	</div>
 )
 
 export const RootRoute = routes;
