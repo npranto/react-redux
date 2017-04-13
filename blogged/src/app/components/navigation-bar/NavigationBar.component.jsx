@@ -23,17 +23,17 @@ export default class NavigationBar extends Component {
 			<div className="navigation-bar-component col s12 m12 l12">
 				<nav className="nav-extended col s12 m12 l12">
 			    <div className="nav-wrapper col s12 m12 l12">
-			      <a href="#" className="brand-logo pacifico"> Blogged </a>
-			      <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
+			      <a className="brand-logo pacifico"> Blogged </a>
+			      <a data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
 			      <ul id="nav-mobile" className="right hide-on-med-and-down">
-			      	<li><a href="badges.html"><Link to="/features"> Features </Link></a></li>
-			        <li><a href="badges.html"><Link to="/blog/1"> Blog of the Day </Link></a></li>
-			        <li><a href="collapsible.html"><Link to="/"> Blogs </Link></a></li>
+			      	<li><Link to="/features"> Features </Link></li>
+			        <li><Link to="/blog/1"> Blog of the Day </Link></li>
+			        <li><Link to="/"> Blogs </Link></li>
 			      </ul>
 			      <ul className="side-nav" id="mobile-demo">
-			      	<li><a href="badges.html"><Link to="/features"> Features </Link></a></li>
-			        <li><a href="badges.html"><Link to="/blog/1"> Blog of the Day </Link></a></li>
-			        <li><a href="collapsible.html"><Link to="/"> Blogs </Link></a></li>
+			      	<li><Link to="/features"> Features </Link></li>
+			        <li><Link to="/blog/1"> Blog of the Day </Link></li>
+			        <li><Link to="/"> Blogs </Link></li>
 			      </ul>
 			    </div>
 			  </nav>
