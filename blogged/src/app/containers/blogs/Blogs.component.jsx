@@ -5,11 +5,14 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {GetBlogsAction} from './../../actions/index';
 import {BlogsDatabaseConfig as BDC} from './../../../configs/BlogsDatabase.config.js';
+import Blog from './../blog/Blog.component.jsx';
 
 class Blogs extends Component {
 	constructor(props) {
 		super(props);
+
 		this.getBlogs = this.getBlogs.bind(this);
+		this.renderBlogList = this.renderBlogList.bind(this);
 	}
 
 	// lifecycle method
@@ -24,6 +27,27 @@ class Blogs extends Component {
 		}, 3000);
 	}
 		  
+	renderBlogList() {
+		const randomBlogs =[
+			{ 
+				id: 1,
+				title: 'Hi!',
+				categories: 'Computer, Friends',
+				content: 'Post about Friends'
+			},
+			{
+				id: 2,
+				title: 'New Post',
+				categories: 'Candy',
+				content: 'Post about Candy'
+			}
+		];
+		return randomBlogs.map((blog)=>{
+			return (
+				<Blog key={blog.id} blog={blog} />
+			)
+		})
+	}
 
 	render() {
 		if(!this.props.blogs.fetchComplete){
@@ -42,6 +66,7 @@ class Blogs extends Component {
 		return (
 			<div className="blogs-component col s12 m12 l12">
 				<h1> Blogs Component </h1>
+				{this.renderBlogList()}
 			</div>
 		)
 	}
