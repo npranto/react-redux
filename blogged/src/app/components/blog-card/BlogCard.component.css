@@ -1,0 +1,12 @@
+
+/*
+Title: Material Design Box Shadows
+Author: Thornton, S
+Availability: https://codepen.io/sdthornton/pen/wBZdXq
+*/
+.card{
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.card:hover{
+	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
