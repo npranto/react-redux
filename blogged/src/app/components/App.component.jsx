@@ -19,7 +19,7 @@ export default class App extends Component {
 				<SearchBar />
 				<Switch>
 					<Route exact path="/" component={Blogs} />
-					<Route path="/blog/:id" component={Blog} />
+					<Route path="/blog" component={Blog} />
 					<Route path="/features" component={Features} />
 				</Switch>
 			</div>

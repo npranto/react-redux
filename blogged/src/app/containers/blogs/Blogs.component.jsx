@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {GetBlogsAction} from './../../actions/index';
 import {BlogsDatabaseConfig as BDC} from './../../../configs/BlogsDatabase.config.js';
-import Blog from './../blog/Blog.component.jsx';
+import BlogCard from './../../components/blog-card/BlogCard.component.jsx';
 
 class Blogs extends Component {
 	constructor(props) {
@@ -44,7 +44,7 @@ class Blogs extends Component {
 		];
 		return randomBlogs.map((blog)=>{
 			return (
-				<Blog key={blog.id} blog={blog} />
+				<BlogCard key={blog.id} blog={blog} />
 			)
 		})
 	}
@@ -65,7 +65,6 @@ class Blogs extends Component {
 		console.log(this.props.blogs);
 		return (
 			<div className="blogs-component col s12 m12 l12">
-				<h1> Blogs Component </h1>
 				{this.renderBlogList()}
 			</div>
 		)
