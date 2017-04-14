@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 import './BlogCard.component.css';
 
 export default class BlogCard extends Component {
@@ -15,8 +15,8 @@ export default class BlogCard extends Component {
 					  <span className="card-title"><strong> {this.props.blog.title} </strong></span>
 					  <p className="blue-grey-text"> {this.props.blog.content} </p>
 					</div>
-					<div className="card-action">
-					  <a href="/" className="blue-text"> Read More </a>
+					<div className="card-action white">
+					  <Link to="/blog" className="blue-text"> Read More </Link>
 					</div>
 		        </div>
 			</div>

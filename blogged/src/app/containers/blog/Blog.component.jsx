@@ -7,19 +7,15 @@ class Blog extends Component {
 	}
 	render() {
 		return (
-          <div className="card blog-component col s12 m12 l12">
-            <div className="card-image">
-              <span className="card-title">Card Title</span>
-            </div>
-            <div className="card-content">
-              <h1 className="card-title"> <strong> Card Title </strong> </h1>
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div className="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
+			<div className="blog-component col s12 m12 l12">
+				<ul className="collection with-header">
+			        <li className="collection-header light-blue darken-1 white-text center"><h4> Card Title </h4></li>
+			        <li className="collection-item grey lighten-5">
+			        	<p className=""> I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively. I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively. I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+			        	</p>
+			        </li>
+		        </ul>
+	        </div>
         )
 	}
 }
