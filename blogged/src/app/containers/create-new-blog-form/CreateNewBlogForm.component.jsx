@@ -55,7 +55,7 @@ class CreateNewBlogForm extends Component {
 						        </div>
 						      </div>
 				        </li>
-				        <a className="waves-effect waves-light btn-large green darken-1 white-text center"> Create </a>
+				        <a type="submit" className="waves-effect waves-light btn-large green darken-1 white-text center"> Create </a>
 			        </ul>
 			    </form>  
 	        </div>
