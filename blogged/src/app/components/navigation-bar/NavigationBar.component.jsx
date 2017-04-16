@@ -22,21 +22,22 @@ export default class NavigationBar extends Component {
 		return (
 			<div className="navigation-bar-component col s12 m12 l12">
 				<nav className="nav-extended col s12 m12 l12">
-			    <div className="nav-wrapper col s12 m12 l12">
-			      <a className="brand-logo pacifico"> Blogged </a>
-			      <a data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
-			      <ul id="nav-mobile" className="right hide-on-med-and-down">
-			      	<li><Link to="/features"> Features </Link></li>
-			        <li><Link to="/blog"> Blog of the Day </Link></li>
-			        <li><Link to="/"> Blogs </Link></li>
-			      </ul>
-			      <ul className="side-nav" id="mobile-demo">
-			      	<li><Link to="/features"> Features </Link></li>
-			        <li><Link to="/blog/1"> Blog of the Day </Link></li>
-			        <li><Link to="/"> Blogs </Link></li>
-			      </ul>
-			    </div>
-			  </nav>
+				    <div className="nav-wrapper col s12 m12 l12">
+				      <a className="brand-logo center pacifico center hide-on-large-only"> Blogged </a>
+				      <a className="brand-logo pacifico hide-on-med-and-down"> Blogged </a>
+				      <a data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
+				      <ul id="nav-mobile" className="right hide-on-med-and-down">
+				      	<li><Link to="/features"> Features </Link></li>
+				        <li><Link to="/blog"> Blog of the Day </Link></li>
+				        <li><Link to="/"> Blogs </Link></li>
+				      </ul>
+				      <ul className="side-nav" id="mobile-demo">
+				      	<li><Link to="/features"> Features </Link></li>
+				        <li><Link to="/blog/1"> Blog of the Day </Link></li>
+				        <li><Link to="/"> Blogs </Link></li>
+				      </ul>
+				    </div>
+				</nav>
 			</div>
 		)
 	}
