@@ -6,7 +6,9 @@ import SearchBar from './../containers/search-bar/SearchBar.component.jsx';
 import Blogs from './../containers/blogs/Blogs.component.jsx';
 import Blog from './../containers/blog/Blog.component.jsx';
 import Features from './../components/features/Features.component.jsx';
-import CreateNewBlog from './../containers/create-new-blog/CreateNewBlog.component.jsx';
+import CreateNewBlogForm from './../containers/create-new-blog-form/CreateNewBlogForm.component.jsx';
+import CreateBlogFixedButton from './../components/create-blog-fixed-button/CreateBlogFixedButton.component.jsx';
+
 
 export default class App extends Component {
 	constructor(props) {
@@ -22,8 +24,9 @@ export default class App extends Component {
 					<Route exact path="/" component={Blogs} />
 					<Route path="/blog" component={Blog} />
 					<Route path="/features" component={Features} />
-					<Route path="/create" component={CreateNewBlog} />
+					<Route path="/create" component={CreateNewBlogForm} />
 				</Switch>
+				<CreateBlogFixedButton />
 			</div>
 		)
 	}
