@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import './CreateNewBlog.component.css';
+import './CreateNewBlogForm.component.css';
 
-class CreateNewBlog extends Component {
+class CreateNewBlogForm extends Component {
 	constructor(props) {
 		super(props);
+
 		this.runMaterializeChipMethods();
 	}
 
@@ -19,7 +20,7 @@ class CreateNewBlog extends Component {
 
 	render() {
 		return (
-			<div className="create-new-blog-component col s12 m12 l12">
+			<div className="create-new-blog-form-component col s12 m12 l12">
 				<form className="col s12 m12 l12">
 					<ul className="collection with-header">
 				        <li className="collection-header light-blue darken-1 white-text center"><h4> Create New Blog </h4></li>
@@ -27,18 +28,18 @@ class CreateNewBlog extends Component {
 						      <div className="row">
 						      	<div className="input-field col s12 m6 l6">
 						          <i className="material-icons prefix">call_made</i>
-						          <input 
-						          	id="icon_prefix" 
-						          	type="text" 
-						          	className="validate"
-						          	required />
+						          <textarea 
+						          	id="icon_prefix2" 
+						          	className="materialize-textarea title"
+						          	required>
+						          </textarea>
 						          <label htmlFor="icon_prefix"> Title </label>
 						        </div>
 						      </div>
 						      <div className="row">
 								<div className="input-field col s12 m6 l6">
 						          <i className="material-icons prefix">label_outline</i>
-						          <div className="chips"></div>
+						          <div className="chips categories"></div>
 						          <label htmlFor="icon_prefix"> Categories </label>
 						        </div>
 						      </div>
@@ -47,7 +48,7 @@ class CreateNewBlog extends Component {
 						          <i className="material-icons prefix">mode_edit</i>
 						          <textarea 
 						          	id="icon_prefix2" 
-						          	className="materialize-textarea"
+						          	className="materialize-textarea content"
 						          	required>
 						          </textarea>
 						          <label htmlFor="icon_prefix2"> Content </label>
@@ -62,4 +63,5 @@ class CreateNewBlog extends Component {
 	}
 }
 
-export default CreateNewBlog;
+export default CreateNewBlogForm;
+
